@@ -25,24 +25,28 @@ class Perceptron {
 
     // Training function to adjust weights based on training data
     public void train(float[][] data, float[] expected, int epochs) {
-        for (int epoch = 0; epoch < epochs; epoch++) {
-            boolean errorFound = false;
-            for (int i = 0; i < data.length; i++) {
-                int output = activate(data[i]);
-                float error = expected[i] - output;
-                if (error != 0) {
-                    errorFound = true;
-                    for (int j = 0; j < weights.length; j++) {
-                        weights[j] += alpha * error * data[i][j];
-                    }
+    for (int epoch = 0; epoch < epochs; epoch++) {
+        boolean errorFound = false;
+        for (int i = 0; i < data.length; i++) {
+            int output = activate(data[i]);
+            float error = expected[i] - output;
+            if (error != 0) {
+                errorFound = true;
+                for (int j = 0; j < weights.length; j++) {
+                    weights[j] += alpha * error * data[i][j];
                 }
             }
-            if (!errorFound) {
-                System.out.println("Training complete in " + (epoch + 1) + " epochs.");
-                break;
-            }
+        }
+        if (!errorFound) {
+            System.out.println("Training complete in " + (epoch + 1) + " epochs.");
+            return; // Stop training early since we converged
         }
     }
+
+    // If we reach here, we never converged (used up all epochs)
+    System.out.println("Reached max epochs (" + epochs + ") without full convergence.");
+}
+
     
     @Override
     public String toString() {
@@ -66,26 +70,34 @@ public class Main {
         };
         
         // Logical AND operation
-        float[] expectedAnd = {0.00f, 0.00f, 0.00f, 1.00f}; 
+        float[] expectedAnd = {0.00f, 0.00f, 0.00f, 1.00f}; // Expected outputs for AND operation
+        Perceptron pAND = new Perceptron(2);
 
-        Perceptron p = new Perceptron(2);
-        System.out.println("Initial Perceptron weights: " + p.weights[0] + ", " + p.weights[1]); 
-        p.train(data, expectedAnd, 10000);
-        System.out.println("AND Perceptron weights: " + p.weights[0] + ", " + p.weights[1]);
+        // Print the final weights of the AND perceptron after and before training
+        System.out.println("Initial Perceptron weights: " + pAND.weights[0] + ", " + pAND.weights[1]); 
+        pAND.train(data, expectedAnd, 10000);
+        System.out.println("AND Perceptron weights: " + pAND.weights[0] + ", " + pAND.weights[1]);
         System.out.println("Training complete for AND operation.");
+
+        // Test the AND perceptron with the training data and print the results
         for (int row = 0; row < data.length; row++){ 
-            int result = p.activate(data[row]); 
+            int result = pAND.activate(data[row]); 
             System.out.println("AND Result " + row + ": " + result);
         }
 
+        
         // Logical OR operation
-        float[] expectedOr = {0.00f, 1.00f, 1.00f, 1.00f}; 
-        System.out.println("Initial Perceptron weights: " + p.weights[0] + ", " + p.weights[1]);
-        p.train(data, expectedOr, 10000);
-        System.out.println("OR Perceptron weights: " + p.weights[0] + ", " + p.weights[1]);
+        Perceptron pOR = new Perceptron(2);// Initialize a new perceptron for OR operation
+        float[] expectedOr = {0.00f, 1.00f, 1.00f, 1.00f}; // Expected outputs for OR operation
+        // Print the final weights of the OR perceptron after and before training
+        System.out.println("Initial Perceptron weights: " + pOR.weights[0] + ", " + pOR.weights[1]);
+        pOR.train(data, expectedOr, 10000);
+        System.out.println("OR Perceptron weights: " + pOR.weights[0] + ", " + pOR.weights[1]);
         System.out.println("Training complete for OR operation.");
+        
+        // Test the OR perceptron with the training data and print the results
         for (int row = 0; row < data.length; row++){ 
-            int result = p.activate(data[row]); 
+            int result = pOR.activate(data[row]); 
             System.out.println("OR Result " + row + ": " + result); 
         }
     }
