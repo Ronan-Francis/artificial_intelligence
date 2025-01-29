@@ -8,11 +8,16 @@ The single-layer perceptron is among the simplest forms of neural networks. Give
 
 Our code defines a `Perceptron` with weights, a threshold of 0.2, and a learning rate of 0.1. The weights are randomly initialized in \([-1,1]\). The perceptron uses a step function: if the weighted sum ≥ threshold, output = 1; else 0. This forms a binary classification boundary for training data.
 
-During training, we repeatedly show the perceptron of each input vector. If the output differs from the expected label, we update the weights using the rule:
-\[
+#### Weight Update Rule
+
+$$
 w_j \leftarrow w_j + \alpha \times (expected - output) \times x_j
-\]
-This gradually shifts the decision boundary to reduce classification errors.
+$$
+
+This rule shifts each weight by an amount proportional to:
+- The learning rate (\(\alpha\)).
+- The difference between the expected output and the perceptron’s current output.
+- The value of the input \(x_j\).
 
 For **AND**, the network learns to output one only when both inputs are 1. After several epochs, the final weights make the perceptron correctly classify \(\{0,0\}\), \(\{1,0\}\), and \(\{0,1\}\) as 0, while \(\{1,1\}\) becomes 1. In the experiment, convergence occurred in 9 epochs. This quick-learning reflects the linearly separable nature of AND.
 
