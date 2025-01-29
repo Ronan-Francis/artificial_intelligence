@@ -23,4 +23,4 @@ For **AND**, the network learns to output one only when both inputs are 1. After
 
 Similarly, **OR** returns 1 if either input is 1. The perceptron updates its weights accordingly and converges in fewer epochs—only 3 in this example. Once training completes, inputs \(\{1,0\}\), \(\{0,1\}\), and \(\{1,1\}\) all yield 1, while \(\{0,0\}\) remains 0. This further illustrates how quickly a single-layer perceptron can learn linear boundaries.
 
-Finally, the lab highlights how single-layer perceptrons solve linearly separable problems but cannot handle more complex, non-linearly separable tasks. By observing the epochs needed to converge, you gain insight into how the learning rate and threshold influence convergence speed and classification accuracy. This concludes the lab.
+Finally, the lab highlights how single-layer perceptrons solve linearly separable problems but cannot handle more complex, non-linearly separable tasks. By observing the epochs needed to converge, you gain insight into how the learning rate and threshold influence convergence speed and classification accuracy.
