@@ -12,6 +12,24 @@ import org.encog.neural.networks.training.propagation.resilient.ResilientPropaga
 
 public class EncogRunner {
     // Create the Training Data Set
+    /*
+     * Game dataset
+     * 
+     * Inputs
+     * -------------
+     * 1) Health (2 = Healthy, 1 = Minor Injuries, 0 = Serious Injuries)
+     * 2) Has a Sword (1 = yes, 0 = no)
+     * 3) Has a Gun (1 = yes, 0 = no)
+     * 4) Number of Enemies (This value may need to be normalized)
+     * 
+     * Outputs
+     * -------------
+     * 1) Panic
+     * 2) Attack
+     * 3) Hide
+     * 4) Run
+     * 
+     */
     private static double[][] data = { // Health, Sword, Gun, Enemies
             { 2, 0, 0, 0 }, { 2, 0, 0, 1 }, { 2, 0, 1, 1 }, { 2, 0, 1, 2 }, { 2, 1, 0, 2 },
             { 2, 1, 0, 1 }, { 1, 0, 0, 0 }, { 1, 0, 0, 1 }, { 1, 0, 1, 1 }, { 1, 0, 1, 2 },
