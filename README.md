@@ -1,8 +1,6 @@
 # artificial_intelligence
 
-## Week 1
-
-### Training a Perceptron the Logical 'AND' and 'OR' Operations
+## Training a Perceptron the Logical 'AND' and 'OR' Operations
 
 The single-layer perceptron is among the simplest forms of neural networks. Given labeled training data, this lab demonstrates how a perceptron can learn basic logical operations, specifically AND and OR. The perceptron adjusts its decision boundary to correctly classify the input patterns by initializing random weights and iteratively updating them.
 

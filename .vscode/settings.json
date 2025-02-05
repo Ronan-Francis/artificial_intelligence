@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "Encog/encog-core-3.4.jar"
+    ]
+}
