@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "EncogRunner",
+            "request": "launch",
+            "mainClass": "Encog.EncogRunner",
+            "projectName": "artificial_intelligence_74d81a82"
+        },
+        {
+            "type": "java",
             "name": "XORHelloWorld",
             "request": "launch",
             "mainClass": "Encog.XORHelloWorld",
