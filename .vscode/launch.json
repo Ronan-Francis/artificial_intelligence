@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AutoMPGRegression",
+            "request": "launch",
+            "mainClass": "AutoMPGRegression.AutoMPGRegression",
+            "projectName": "artificial_intelligence_74d81a82"
+        },
+        {
+            "type": "java",
             "name": "EncogRunner",
             "request": "launch",
             "mainClass": "Encog.EncogRunner",
