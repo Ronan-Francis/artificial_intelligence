@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FuzzyLogic",
+            "request": "launch",
+            "mainClass": "FuzzyLogic",
+            "projectName": "artificial_intelligence_74d81a82"
+        },
+        {
+            "type": "java",
             "name": "AutoMPGRegression",
             "request": "launch",
             "mainClass": "AutoMPGRegression.AutoMPGRegression",

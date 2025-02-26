@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "Encog/encog-core-3.4.jar"
+        "lib/encog-core-3.4.jar",
+        "lib/jFuzzyLogic_2.0.6.jar"
     ]
 }
